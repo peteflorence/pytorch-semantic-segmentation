@@ -19,7 +19,7 @@ from utils import check_mkdir, evaluate, AverageMeter, CrossEntropyLoss2d
 
 cudnn.benchmark = True
 
-ckpt_path = '../../ckpt'
+ckpt_path = './ckpt'
 exp_name = 'voc-psp_net'
 writer = SummaryWriter(os.path.join(ckpt_path, 'exp', exp_name))
 
@@ -41,7 +41,12 @@ args = {
 def main(train_args):
     net = PSPNet(num_classes=voc.num_classes).cuda()
 
+<<<<<<< HEAD
     if len(train_args['snapshot']) == 0:
+=======
+    if len(args['snapshot']) == 0:
+        #net.load_state_dict(torch.load(os.path.join(ckpt_path, 'cityscapes (coarse)-psp_net', 'xx.pth')))
+>>>>>>> 1584a7f... can now run python train/voc-fcn/train.py but running out of memory
         curr_epoch = 1
         train_args['best_record'] = {'epoch': 0, 'val_loss': 1e10, 'acc': 0, 'acc_cls': 0, 'mean_iu': 0, 'fwavacc': 0}
     else:
