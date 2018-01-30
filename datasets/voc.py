@@ -8,7 +8,7 @@ from torch.utils import data
 
 num_classes = 21
 ignore_label = 255
-root = '/media/library/Packages/Datasets/VOC'
+root = '/media/peteflo/3TBbackup/pytorch-pretrained/VOC'
 
 '''
 color map
